@@ -13,6 +13,15 @@
 		C6045A8F2947951A00C991EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6045A8D2947951A00C991EB /* Main.storyboard */; };
 		C6045A912947951B00C991EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6045A902947951B00C991EB /* Assets.xcassets */; };
 		C6045A942947951B00C991EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6045A922947951B00C991EB /* LaunchScreen.storyboard */; };
+		C68E6B83294A2E54001F5D52 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68E6B82294A2E54001F5D52 /* PlayViewController.swift */; };
+		C68E6B86294A3244001F5D52 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68E6B85294A3244001F5D52 /* Theme.swift */; };
+		C68E6B89294A34B0001F5D52 /* PlayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68E6B88294A34B0001F5D52 /* PlayService.swift */; };
+		C68E6B8B294A41B1001F5D52 /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68E6B8A294A41B1001F5D52 /* Play.storyboard */; };
+		C69DFBD6294B715700C4DF80 /* PlayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69DFBD5294B715700C4DF80 /* PlayInteractor.swift */; };
+		C69DFBD8294B724500C4DF80 /* PlayModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69DFBD7294B724500C4DF80 /* PlayModels.swift */; };
+		C69DFBDA294B72F600C4DF80 /* PlayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69DFBD9294B72F600C4DF80 /* PlayPresenter.swift */; };
+		C69DFBDC294B74C800C4DF80 /* PlayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69DFBDB294B74C800C4DF80 /* PlayRouter.swift */; };
+		C69DFBDF294B887100C4DF80 /* PlayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69DFBDE294B887100C4DF80 /* PlayCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,15 @@
 		C6045A902947951B00C991EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6045A932947951B00C991EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6045A952947951B00C991EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C68E6B82294A2E54001F5D52 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		C68E6B85294A3244001F5D52 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		C68E6B88294A34B0001F5D52 /* PlayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayService.swift; sourceTree = "<group>"; };
+		C68E6B8A294A41B1001F5D52 /* Play.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Play.storyboard; sourceTree = "<group>"; };
+		C69DFBD5294B715700C4DF80 /* PlayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayInteractor.swift; sourceTree = "<group>"; };
+		C69DFBD7294B724500C4DF80 /* PlayModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayModels.swift; sourceTree = "<group>"; };
+		C69DFBD9294B72F600C4DF80 /* PlayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPresenter.swift; sourceTree = "<group>"; };
+		C69DFBDB294B74C800C4DF80 /* PlayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayRouter.swift; sourceTree = "<group>"; };
+		C69DFBDE294B887100C4DF80 /* PlayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +76,62 @@
 			children = (
 				C6045A872947951A00C991EB /* AppDelegate.swift */,
 				C6045A892947951A00C991EB /* SceneDelegate.swift */,
-				C6045A8B2947951A00C991EB /* ViewController.swift */,
-				C6045A8D2947951A00C991EB /* Main.storyboard */,
 				C6045A902947951B00C991EB /* Assets.xcassets */,
 				C6045A922947951B00C991EB /* LaunchScreen.storyboard */,
 				C6045A952947951B00C991EB /* Info.plist */,
+				C68E6B87294A349A001F5D52 /* Services */,
+				C68E6B84294A316D001F5D52 /* Models */,
+				C68E6B81294A2C9D001F5D52 /* Scenes  */,
 			);
 			path = MatchingCards;
+			sourceTree = "<group>";
+		};
+		C68E6B80294A2C81001F5D52 /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				C68E6B8A294A41B1001F5D52 /* Play.storyboard */,
+				C68E6B82294A2E54001F5D52 /* PlayViewController.swift */,
+				C69DFBD5294B715700C4DF80 /* PlayInteractor.swift */,
+				C69DFBD7294B724500C4DF80 /* PlayModels.swift */,
+				C69DFBD9294B72F600C4DF80 /* PlayPresenter.swift */,
+				C69DFBDB294B74C800C4DF80 /* PlayRouter.swift */,
+				C69DFBDE294B887100C4DF80 /* PlayCollectionViewCell.swift */,
+			);
+			path = Play;
+			sourceTree = "<group>";
+		};
+		C68E6B81294A2C9D001F5D52 /* Scenes  */ = {
+			isa = PBXGroup;
+			children = (
+				C69DFBDD294B845700C4DF80 /* Main */,
+				C68E6B80294A2C81001F5D52 /* Play */,
+			);
+			path = "Scenes ";
+			sourceTree = "<group>";
+		};
+		C68E6B84294A316D001F5D52 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C68E6B85294A3244001F5D52 /* Theme.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C68E6B87294A349A001F5D52 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C68E6B88294A34B0001F5D52 /* PlayService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C69DFBDD294B845700C4DF80 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C6045A8B2947951A00C991EB /* ViewController.swift */,
+				C6045A8D2947951A00C991EB /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68E6B8B294A41B1001F5D52 /* Play.storyboard in Resources */,
 				C6045A942947951B00C991EB /* LaunchScreen.storyboard in Resources */,
 				C6045A912947951B00C991EB /* Assets.xcassets in Resources */,
 				C6045A8F2947951A00C991EB /* Main.storyboard in Resources */,
@@ -138,9 +206,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68E6B83294A2E54001F5D52 /* PlayViewController.swift in Sources */,
 				C6045A8C2947951A00C991EB /* ViewController.swift in Sources */,
+				C69DFBDC294B74C800C4DF80 /* PlayRouter.swift in Sources */,
+				C69DFBDA294B72F600C4DF80 /* PlayPresenter.swift in Sources */,
+				C69DFBD6294B715700C4DF80 /* PlayInteractor.swift in Sources */,
+				C68E6B86294A3244001F5D52 /* Theme.swift in Sources */,
 				C6045A882947951A00C991EB /* AppDelegate.swift in Sources */,
+				C69DFBD8294B724500C4DF80 /* PlayModels.swift in Sources */,
 				C6045A8A2947951A00C991EB /* SceneDelegate.swift in Sources */,
+				C69DFBDF294B887100C4DF80 /* PlayCollectionViewCell.swift in Sources */,
+				C68E6B89294A34B0001F5D52 /* PlayService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
