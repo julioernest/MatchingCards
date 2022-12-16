@@ -17,8 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ab7-z5-6qU">
+                                <rect key="frame" x="102" y="128" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EJ-fE-tIV">
+                                <rect key="frame" x="30" y="129" width="42" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="mej-Rt-l2f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MTe-5L-O0f">
-                                <rect key="frame" x="0.0" y="259" width="393" height="509"/>
+                                <rect key="frame" x="0.0" y="159" width="393" height="609"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vvx-zO-9sF">
                                     <size key="itemSize" width="128" height="128"/>
@@ -65,14 +80,21 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="MTe-5L-O0f" firstAttribute="top" secondItem="ab7-z5-6qU" secondAttribute="bottom" constant="10" id="FYH-rp-hk8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MTe-5L-O0f" secondAttribute="trailing" id="I50-3N-Wrb"/>
                             <constraint firstItem="MTe-5L-O0f" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="NTz-18-Xey"/>
-                            <constraint firstItem="MTe-5L-O0f" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="200" id="hMI-Xj-9xv"/>
+                            <constraint firstItem="ab7-z5-6qU" firstAttribute="height" secondItem="9EJ-fE-tIV" secondAttribute="height" multiplier="1.05" id="TSx-8a-Dmj"/>
+                            <constraint firstItem="MTe-5L-O0f" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="100" id="hMI-Xj-9xv"/>
+                            <constraint firstItem="ab7-z5-6qU" firstAttribute="leading" secondItem="9EJ-fE-tIV" secondAttribute="trailing" constant="30" id="ip3-bW-1ok"/>
+                            <constraint firstItem="9EJ-fE-tIV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="lv5-Do-0Oa"/>
+                            <constraint firstItem="MTe-5L-O0f" firstAttribute="top" secondItem="9EJ-fE-tIV" secondAttribute="bottom" constant="10" id="sOJ-HI-6I7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="MTe-5L-O0f" secondAttribute="bottom" constant="50" id="w1L-dm-FMC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="MTe-5L-O0f" id="UoW-rG-n70"/>
+                        <outlet property="scoreLabel" destination="9EJ-fE-tIV" id="mhd-PS-eae"/>
+                        <outlet property="timeLabel" destination="ab7-z5-6qU" id="rlM-ka-AmS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
