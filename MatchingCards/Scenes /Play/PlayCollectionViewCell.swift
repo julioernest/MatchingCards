@@ -13,11 +13,11 @@ class PlayCollectionViewCell: UICollectionViewCell {
     @IBOutlet var symbolOnTheBack: UILabel!
     
     @IBOutlet var symbolOnTheFront: UILabel!
-    
+    var itIsShown: Bool = false
     func showCard(_ show: Bool, animated: Bool) {
         symbolOnTheFront.isHidden = false
         symbolOnTheBack.isHidden = false
-           
+        itIsShown = show 
            if animated {
                if show {
                    UIView.transition(

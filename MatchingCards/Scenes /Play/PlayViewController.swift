@@ -10,18 +10,20 @@ import Foundation
 
 protocol PlayDisplayLogic: AnyObject {
     func displayLoadGame(viewModel: Play.LoadGame.ViewModel)
+    func displayShowCard(viewModel: Play.TouchCard.ViewModel)
+    func displayHideCard(viewModel: Play.HideCards.ViewModel)
+    func displayScore(viewModel: Play.Score.ViewModel)
 }
 
 class PlayViewController: UIViewController {
     var interactor: PlayBusinessLogic?
     var router: (PlayRoutingLogic & PlayDataPassing)?
+    
     var backgroundRGB: Theme.CardColors?
     var defaultLevel = 3
     var index = 0
     var score = 0
-    
-    var shownCards: [IndexPath] = [] 
-    
+    var counter = 0
     
     var theme: Theme? {
         didSet {
@@ -29,8 +31,10 @@ class PlayViewController: UIViewController {
             collectionView.reloadData()
         }
     }
-    var cardDeck: [Play.Card] = []
+    var cardDeck: [String] = []
     
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     
     
@@ -57,42 +61,46 @@ class PlayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor?.loadTheme(request: .init())
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        interactor?.loadTheme(request: .init())
+        startTimer()
+        
+        scoreLabel.text = "play.score.label.start".localized()
     }
     
+    // MARK: - Create the deck of cards
+    private func startTimer() {
+        timeLabel.text = "play.time.label.start".localized()
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+            self?.counter += 1
+            guard let counter = self?.counter else { return }
+            switch counter {
+            case 0 ..< 10:
+                self?.timeLabel.text = "play.time.under10seconds".localized(counter)
+            case 10 ... 60:
+                self?.timeLabel.text = "play.time.over10seconds".localized(counter)
+            default:
+                break
+            }
+        }
+    }
     private func createCardDeck(level: Int) {
         guard let symbols = theme?.symbols else { return }
-        var newDeckCard: [Play.Card] = []
+        var newDeckCard: [String] = []
+        
         symbols.map {
             for _ in 0 ..< level*2 {
-                newDeckCard.append(Play.Card(state: .back, frontSymbol: $0))
+                newDeckCard.append($0)
             }
         }
         cardDeck = newDeckCard.shuffled()
     }
     
-    private func didSelectCard(indexPath: IndexPath) {
-        shownCards.append(indexPath)
-        
-        if shownCards.count > 1 {
-            if cardDeck[indexPath.row] == cardDeck[shownCards[index].row] {
-                
-            }
-        }
-        guard let cell = collectionView.cellForItem(at: shownCards[index]) as? PlayCollectionViewCell else { return }
-        cell.showCard(true, animated: true)
-    }
 }
-
-extension PlayViewController: PlayDisplayLogic {
-    func displayLoadGame(viewModel: Play.LoadGame.ViewModel) {
-        let theme = viewModel.theme
-        navigationItem.title = theme.title
-        self.theme = theme
-    }
-}
+ 
+    // MARK: - UICollectionViewDataSource
 
 extension PlayViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -101,7 +109,7 @@ extension PlayViewController: UICollectionViewDataSource {
         
         cell.backgroundColor = UIColor(red: theme.card_color.red, green: theme.card_color.green, blue: theme.card_color.blue, alpha: 1)
         cell.symbolOnTheBack.text = theme.card_symbol
-        cell.symbolOnTheFront.text = cardDeck[indexPath.row].frontSymbol
+        cell.symbolOnTheFront.text = cardDeck[indexPath.item]
         cell.showCard(false, animated: false)
         
         return cell
@@ -113,35 +121,19 @@ extension PlayViewController: UICollectionViewDataSource {
 
   
 }
+    // MARK: - UICollectionViewDelegate
 
 extension PlayViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        didSelectCard(indexPath: indexPath)
+        guard let cell = collectionView.cellForItem(at: indexPath) as? PlayCollectionViewCell else {
+            preconditionFailure()
+        }
+        if cell.itIsShown { return }
+            
+        interactor?.didTouchCard(request: .init(card: Play.Card(id: indexPath, frontSymbol: cardDeck[indexPath.item])))
         collectionView.deselectItem(at: indexPath, animated: true)
         
-//        if  cardDeck[indexPath.row].state == .back {
-//            cardDeck[indexPath.row].state = .front
-//            collectionView.reloadData()
-//        }
 //
-//        if let checkItem = checkItem, checkItem != indexPath.row{
-//            if cardDeck[indexPath.row] == cardDeck[checkItem] {
-//                cardDeck[indexPath.row].state = .matched
-//                cardDeck[checkItem].state = .matched
-//                score += 1
-//                print(score)
-//
-//            } else {
-//                cardDeck[indexPath.row].state = .back
-//                cardDeck[checkItem].state = .back
-//
-//            }
-//            collectionView.reloadData()
-//            self.checkItem = nil
-//            return
-//        }
-//
-//        self.checkItem = indexPath.row
         
         
     }

@@ -18,6 +18,38 @@ struct Play {
             let theme: Theme
         }
     }
+    struct TouchCard {
+        struct Request {
+            let card: Play.Card
+        }
+        struct Response {
+            let card: Play.Card
+        }
+        struct ViewModel {
+            let card: Play.Card
+        }
+    }
+    
+    
+    struct HideCards {
+        struct Request {}
+        struct Response {
+            let cards: [Play.Card]
+        }
+        struct ViewModel {
+            let cards: [Play.Card]
+        }
+    }
+    struct Score {
+        struct Response {
+            let score: Int
+        }
+        struct ViewModel {
+            let score: Int
+        }
+    }
+    
+    
     enum CardState {
         case back
         case front
@@ -25,11 +57,9 @@ struct Play {
     }
     struct Card: Equatable {
         static func == (lhs: Play.Card, rhs: Play.Card) -> Bool {
-            return lhs.state == rhs.state &&
             lhs.frontSymbol == rhs.frontSymbol
         }
-        
-        var state: CardState
+        var id: IndexPath
         var frontSymbol: String
         
     }
