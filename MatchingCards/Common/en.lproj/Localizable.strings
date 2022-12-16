@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  MatchingCards
+
+  Created by Julio-Ernest Costache on 16.12.2022.
+  
+*/
+
+"play.score.label.start" = "Score is 0";
+"play.time.label.start" = "0 sec";
+"play.time.under10seconds" = "0%d seconds";
+"play.time.over10seconds" = "%d seconds";
+

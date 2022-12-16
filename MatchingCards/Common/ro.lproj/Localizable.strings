@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  MatchingCards
+
+  Created by Julio-Ernest Costache on 16.12.2022.
+  
+*/
+
+"play.score.label.start" = "Scorul este 0";
+"play.time.label.start" = "0 secunde";
+"play.time.under10seconds" = "0%d secunde";
+"play.time.over10seconds" = "%d secunde";
