@@ -11,3 +11,6 @@
 "play.time.under10seconds" = "0%d seconds";
 "play.time.over10seconds" = "%d seconds";
 
+"main.error.label" = "Error";
+"main.retry.label" = "Retry";
+

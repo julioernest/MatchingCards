@@ -10,3 +10,6 @@
 "play.time.label.start" = "0 secunde";
 "play.time.under10seconds" = "0%d secunde";
 "play.time.over10seconds" = "%d secunde";
+
+"main.error.label" = "Eroare";
+"main.retry.label" = "Reincearca";
