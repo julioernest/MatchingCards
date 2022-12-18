@@ -1,27 +1,27 @@
 
 /* Class = "UIButton"; configuration.title = "Best Score"; ObjectID = "Ff9-tj-v55"; */
-"Ff9-tj-v55.configuration.title" = "Cel mai bun scor";
+"Ff9-tj-v55.configuration.title" = "Best Score";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Ff9-tj-v55"; */
 "Ff9-tj-v55.normalTitle" = "Button";
 
 /* Class = "UISegmentedControl"; U8m-qI-uMD.segmentTitles[0] = "First"; ObjectID = "U8m-qI-uMD"; */
-"U8m-qI-uMD.segmentTitles[0]" = "Primul";
+"U8m-qI-uMD.segmentTitles[0]" = "First";
 
 /* Class = "UISegmentedControl"; U8m-qI-uMD.segmentTitles[1] = "Second"; ObjectID = "U8m-qI-uMD"; */
-"U8m-qI-uMD.segmentTitles[1]" = "Al doilea";
+"U8m-qI-uMD.segmentTitles[1]" = "Second";
 
 /* Class = "UISegmentedControl"; WMc-N6-UhW.segmentTitles[0] = "Easy"; ObjectID = "WMc-N6-UhW"; */
-"WMc-N6-UhW.segmentTitles[0]" = "Usor";
+"WMc-N6-UhW.segmentTitles[0]" = "Easy";
 
 /* Class = "UISegmentedControl"; WMc-N6-UhW.segmentTitles[1] = "Hard"; ObjectID = "WMc-N6-UhW"; */
-"WMc-N6-UhW.segmentTitles[1]" = "Greu";
+"WMc-N6-UhW.segmentTitles[1]" = "Hard";
 
 /* Class = "UIButton"; configuration.title = "Play"; ObjectID = "XhC-ub-K9K"; */
-"XhC-ub-K9K.configuration.title" = "Start";
+"XhC-ub-K9K.configuration.title" = "Play";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "XhC-ub-K9K"; */
 "XhC-ub-K9K.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Matching Cards"; ObjectID = "z5U-pD-qsA"; */
-"z5U-pD-qsA.text" = "Nimereste cartile";
+"z5U-pD-qsA.text" = "Matching Cards";

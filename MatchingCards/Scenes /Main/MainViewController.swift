@@ -35,6 +35,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         activityIndicator.isHidden = true
         setup()
+        setUpButtons()
         loadData()
         
         
@@ -56,6 +57,10 @@ class MainViewController: UIViewController {
   
     func loadData() {
         interactor?.loadData(request: .init())
+    }
+    private func setUpButtons() {
+        playButton.layer.cornerRadius = 7
+        scoreButton.layer.cornerRadius = 7
     }
     
 

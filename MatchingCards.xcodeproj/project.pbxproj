@@ -44,7 +44,6 @@
 		C6045A952947951B00C991EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C662EAA3294C9A3900ABA499 /* PlayViewControllerDisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewControllerDisplayLogic.swift; sourceTree = "<group>"; };
 		C662EAA5294CAE4F00ABA499 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		C662EAA6294CAE4F00ABA499 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Main.strings; sourceTree = "<group>"; };
 		C662EAAB294CAEE700ABA499 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C662EAAD294CAEE900ABA499 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C662EAAE294CB01A00ABA499 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -58,6 +57,8 @@
 		C6989B78294FB33D00A2E216 /* MainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
 		C6989B7A294FB4DE00A2E216 /* MainModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModels.swift; sourceTree = "<group>"; };
 		C6989B7C294FB82100A2E216 /* MainViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
+		C6989B7F294FDEC100A2E216 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		C6989B81294FDED900A2E216 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Main.strings; sourceTree = "<group>"; };
 		C69DFBD5294B715700C4DF80 /* PlayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayInteractor.swift; sourceTree = "<group>"; };
 		C69DFBD7294B724500C4DF80 /* PlayModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayModels.swift; sourceTree = "<group>"; };
 		C69DFBD9294B72F600C4DF80 /* PlayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPresenter.swift; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				C6045A862947951A00C991EB /* MatchingCards */,
+				C662EAA7294CAEBF00ABA499 /* Common */,
 				C6045A852947951A00C991EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,7 +97,6 @@
 		C6045A862947951A00C991EB /* MatchingCards */ = {
 			isa = PBXGroup;
 			children = (
-				C662EAA7294CAEBF00ABA499 /* Common */,
 				C6045A872947951A00C991EB /* AppDelegate.swift */,
 				C6045A892947951A00C991EB /* SceneDelegate.swift */,
 				C6045A902947951B00C991EB /* Assets.xcassets */,
@@ -275,7 +276,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				C6045A8E2947951A00C991EB /* Base */,
-				C662EAA6294CAE4F00ABA499 /* ro */,
+				C6989B7F294FDEC100A2E216 /* en */,
+				C6989B81294FDED900A2E216 /* ro */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
