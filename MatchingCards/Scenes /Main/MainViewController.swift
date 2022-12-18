@@ -10,6 +10,10 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var playButton: UIButton!
+    @IBOutlet var scoreButton: UIButton!
+    @IBOutlet var levelSegmentedControll: UISegmentedControl!
+    @IBOutlet var themeSegmentedControll: UISegmentedControl!
+    
     let service = PlayService()
     var data: [Theme]?
     
