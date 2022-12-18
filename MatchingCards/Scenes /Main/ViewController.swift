@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         playButton.layer.cornerRadius = 0.1
     }
     func loadData() {
-        service.getConcentrationGameThemes { [weak self] response in
+        service.getConcentrationGameThemes(url: WebService.firebaseLink) { [weak self] response in
             switch response {
             case let .success(theme):
                 self?.data = theme
