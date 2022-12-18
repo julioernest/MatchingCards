@@ -12,7 +12,9 @@ extension PlayViewController: PlayDisplayLogic {
     func displayLoadGame(viewModel: Play.LoadGame.ViewModel) {
         let theme = viewModel.theme
         navigationItem.title = theme.title
+        self.defaultLevel = viewModel.level
         self.theme = theme
+     
     }
     func displayShowCard(viewModel: Play.TouchCard.ViewModel) {
         

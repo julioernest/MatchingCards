@@ -20,7 +20,7 @@ class PlayViewController: UIViewController {
     var router: (PlayRoutingLogic & PlayDataPassing)?
     
     var backgroundRGB: Theme.CardColors?
-    var defaultLevel = 3
+    var defaultLevel: Int?
     var index = 0
     var score = 0
     var counter = 0
@@ -86,8 +86,8 @@ class PlayViewController: UIViewController {
             }
         }
     }
-    private func createCardDeck(level: Int) {
-        guard let symbols = theme?.symbols else { return }
+    private func createCardDeck(level: Int? ) {
+        guard let symbols = theme?.symbols, let level = level else { return }
         var newDeckCard: [String] = []
         
         symbols.map {

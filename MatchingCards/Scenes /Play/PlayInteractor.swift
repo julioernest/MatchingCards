@@ -15,10 +15,12 @@ protocol PlayBusinessLogic {
 
 protocol PlayDataStore {
     var theme: Theme? { get set }
+    var level: Int? { get set }
 }
 class PlayInteractor: PlayBusinessLogic, PlayDataStore {
     var presenter: PlayPresentationLogic?
     var theme: Theme?
+    var level: Int?
     var cardsShown: [Play.Card] = []
     var score: Int = 0 {
         didSet {
@@ -27,8 +29,8 @@ class PlayInteractor: PlayBusinessLogic, PlayDataStore {
     }
     
     func loadTheme(request: Play.LoadGame.Request) {
-        guard let theme = theme else { return }
-        presenter?.presentLoadGame(response: .init(theme: theme))
+        guard let theme = theme, let level = level else { return }
+        presenter?.presentLoadGame(response: .init(theme: theme, level: level))
     }
     
     func didTouchCard(request: Play.TouchCard.Request) {

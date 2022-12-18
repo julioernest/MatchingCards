@@ -13,9 +13,11 @@ struct Play {
         struct Request {}
         struct Response {
             let theme: Theme
+            let level: Int
         }
         struct ViewModel {
             let theme: Theme
+            let level: Int
         }
     }
     struct TouchCard {

@@ -7,9 +7,7 @@
 
 import Foundation
 
-protocol PlayRoutingLogic {
-    
-}
+protocol PlayRoutingLogic {}
 protocol PlayDataPassing {
     var dataStore: PlayDataStore? { get }
 }

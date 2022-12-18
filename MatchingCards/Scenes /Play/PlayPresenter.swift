@@ -18,7 +18,7 @@ class PlayPresenter: PlayPresentationLogic {
     weak var viewController: PlayDisplayLogic?
     
     func presentLoadGame(response: Play.LoadGame.Response) {
-        viewController?.displayLoadGame(viewModel: .init(theme: response.theme))
+        viewController?.displayLoadGame(viewModel: .init(theme: response.theme, level: response.level))
     }
     
     func presentShowCard(response: Play.TouchCard.Response) {
