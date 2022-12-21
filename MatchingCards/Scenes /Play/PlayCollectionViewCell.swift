@@ -11,38 +11,40 @@ import UIKit
 class PlayCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var symbolOnTheBack: UILabel!
-    
     @IBOutlet var symbolOnTheFront: UILabel!
+    
+    @IBOutlet var frontView: UIView!
+    @IBOutlet var backView: UIView!
+    
+
     var itIsShown: Bool = false
-    func showCard(_ show: Bool, animated: Bool) {
-        symbolOnTheFront.isHidden = false
-        symbolOnTheBack.isHidden = false
+    func showCard(_ show: Bool, animated: Bool, completion: @escaping ((Bool) -> Void)) {
+        frontView.isHidden = false
+        backView.isHidden = false
         itIsShown = show 
            if animated {
                if show {
                    UIView.transition(
-                       from: symbolOnTheBack,
-                       to: symbolOnTheFront,
+                       from: backView,
+                       to: frontView,
                        duration: 0.5,
                        options: [.transitionFlipFromRight, .showHideTransitionViews],
-                       completion: { (finished: Bool) -> () in
-                   })
+                       completion: completion)
                } else {
                    UIView.transition(
-                       from: symbolOnTheFront,
-                       to: symbolOnTheBack,
+                       from: frontView,
+                       to: backView,
                        duration: 0.5,
                        options: [.transitionFlipFromRight, .showHideTransitionViews],
-                       completion:  { (finished: Bool) -> () in
-                   })
+                       completion: completion )
                }
            } else {
                if show {
-                   bringSubviewToFront(symbolOnTheFront)
-                   symbolOnTheBack.isHidden = true
+                   bringSubviewToFront(frontView)
+                   backView.isHidden = true
                } else {
-                   bringSubviewToFront(symbolOnTheBack)
-                   symbolOnTheFront.isHidden = true
+                   bringSubviewToFront(backView)
+                   frontView.isHidden = true
                }
            }
        }
