@@ -49,27 +49,53 @@
                                             <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwI-Bb-b7z">
-                                                    <rect key="frame" x="43" y="53.666666666666657" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="For-lk-YgB">
-                                                    <rect key="frame" x="53" y="63" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWU-2p-kLv" userLabel="frontView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="For-lk-YgB">
+                                                            <rect key="frame" x="43" y="53.666666666666657" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="For-lk-YgB" firstAttribute="centerY" secondItem="kWU-2p-kLv" secondAttribute="centerY" id="1cj-cU-bbO"/>
+                                                        <constraint firstItem="For-lk-YgB" firstAttribute="centerX" secondItem="kWU-2p-kLv" secondAttribute="centerX" id="BWC-tJ-TJE"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wa-cf-Pix" userLabel="backView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwI-Bb-b7z">
+                                                            <rect key="frame" x="43" y="53.666666666666657" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="YwI-Bb-b7z" firstAttribute="centerX" secondItem="9wa-cf-Pix" secondAttribute="centerX" id="3pb-sB-IIv"/>
+                                                        <constraint firstItem="YwI-Bb-b7z" firstAttribute="centerY" secondItem="9wa-cf-Pix" secondAttribute="centerY" id="gZQ-rm-1XV"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="YwI-Bb-b7z" firstAttribute="centerY" secondItem="8Pi-jV-8dJ" secondAttribute="centerY" id="Thy-jf-vrn"/>
-                                                <constraint firstItem="YwI-Bb-b7z" firstAttribute="centerX" secondItem="8Pi-jV-8dJ" secondAttribute="centerX" id="WMu-gx-Idk"/>
-                                                <constraint firstItem="For-lk-YgB" firstAttribute="centerY" secondItem="8Pi-jV-8dJ" secondAttribute="centerY" id="gPX-8s-DpM"/>
-                                                <constraint firstItem="For-lk-YgB" firstAttribute="centerX" secondItem="8Pi-jV-8dJ" secondAttribute="centerX" id="k1D-Lf-auQ"/>
+                                                <constraint firstItem="9wa-cf-Pix" firstAttribute="top" secondItem="8Pi-jV-8dJ" secondAttribute="top" id="0wR-u2-Vws"/>
+                                                <constraint firstAttribute="trailing" secondItem="kWU-2p-kLv" secondAttribute="trailing" id="PTm-Tu-diV"/>
+                                                <constraint firstItem="9wa-cf-Pix" firstAttribute="leading" secondItem="8Pi-jV-8dJ" secondAttribute="leading" id="YvE-a1-9rP"/>
+                                                <constraint firstAttribute="bottom" secondItem="kWU-2p-kLv" secondAttribute="bottom" id="jND-XU-nUs"/>
+                                                <constraint firstAttribute="bottom" secondItem="9wa-cf-Pix" secondAttribute="bottom" id="rcM-JP-ueJ"/>
+                                                <constraint firstItem="kWU-2p-kLv" firstAttribute="leading" secondItem="8Pi-jV-8dJ" secondAttribute="leading" id="tMz-ni-Ljg"/>
+                                                <constraint firstAttribute="trailing" secondItem="9wa-cf-Pix" secondAttribute="trailing" id="tQl-dG-yRC"/>
+                                                <constraint firstItem="kWU-2p-kLv" firstAttribute="top" secondItem="8Pi-jV-8dJ" secondAttribute="top" id="u3p-UU-GKX"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="backView" destination="9wa-cf-Pix" id="7Jp-dW-vw3"/>
+                                            <outlet property="frontView" destination="kWU-2p-kLv" id="YZt-sK-Ydy"/>
                                             <outlet property="symbolOnTheBack" destination="YwI-Bb-b7z" id="cbH-0W-6G7"/>
                                             <outlet property="symbolOnTheFront" destination="For-lk-YgB" id="Oae-6m-p0H"/>
                                         </connections>

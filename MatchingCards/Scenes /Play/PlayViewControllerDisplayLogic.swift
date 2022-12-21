@@ -16,12 +16,16 @@ extension PlayViewController: PlayDisplayLogic {
         self.theme = theme
      
     }
+    
     func displayShowCard(viewModel: Play.TouchCard.ViewModel) {
         
         guard let cell = collectionView.cellForItem(at: viewModel.card.id) as? PlayCollectionViewCell else {
             preconditionFailure("Couldn't get the cell at index = \(viewModel.card.id)")
         }
-        cell.showCard(true, animated: true)
+        isInTransition = true
+        cell.showCard(true, animated: true) {  [weak self] _  in
+            self?.isInTransition = false
+        }
     }
     
     func displayHideCard(viewModel: Play.HideCards.ViewModel) {
@@ -29,7 +33,10 @@ extension PlayViewController: PlayDisplayLogic {
             guard let cell = collectionView.cellForItem(at: card.id) as? PlayCollectionViewCell else {
                 preconditionFailure("Couldn't get the cell at index = \(card.id)")
             }
-            cell.showCard(false, animated: true)
+            isInTransition = true
+            cell.showCard(false, animated: true) { [weak self] _  in
+                self?.isInTransition = false
+            }
         }
     }
     func displayScore(viewModel: Play.Score.ViewModel) {

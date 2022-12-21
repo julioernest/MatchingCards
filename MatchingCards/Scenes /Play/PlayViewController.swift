@@ -25,6 +25,8 @@ class PlayViewController: UIViewController {
     var score = 0
     var counter = 0
     
+    var isInTransition: Bool = false
+    
     var theme: Theme? {
         didSet {
             createCardDeck( level: defaultLevel)
@@ -105,12 +107,14 @@ class PlayViewController: UIViewController {
 extension PlayViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "playCell", for: indexPath) as? PlayCollectionViewCell, let theme = theme else { preconditionFailure("Unnable to deque the cell")}
+        let backgroundColor =  UIColor(red: theme.card_color.red, green: theme.card_color.green, blue: theme.card_color.blue, alpha: 1)
         
-        
-        cell.backgroundColor = UIColor(red: theme.card_color.red, green: theme.card_color.green, blue: theme.card_color.blue, alpha: 1)
         cell.symbolOnTheBack.text = theme.card_symbol
         cell.symbolOnTheFront.text = cardDeck[indexPath.item]
-        cell.showCard(false, animated: false)
+        cell.frontView.backgroundColor = backgroundColor
+        cell.backView.backgroundColor = backgroundColor
+     
+        cell.showCard(false, animated: false) { _ in }
         
         return cell
     }
@@ -128,7 +132,7 @@ extension PlayViewController: UICollectionViewDelegate {
         guard let cell = collectionView.cellForItem(at: indexPath) as? PlayCollectionViewCell else {
             preconditionFailure()
         }
-        if cell.itIsShown { return }
+        if cell.itIsShown || isInTransition { return }
             
         interactor?.didTouchCard(request: .init(card: Play.Card(id: indexPath, frontSymbol: cardDeck[indexPath.item])))
         collectionView.deselectItem(at: indexPath, animated: true)
